@@ -63,7 +63,7 @@ pipeline {
                             // https://github.com/giampaolo/psutil/issues/1966
                             sh "sed -i '/psutil/d' bundle-workflow/Pipfile"
                             
-                            sh "echo JAVA_HOME: $JAVA_HOME && ./bundle-workflow/build.sh manifests/$INPUT_MANIFEST --component k-NN"
+                            sh "env && ./bundle-workflow/build.sh manifests/$INPUT_MANIFEST --component k-NN"
                         }
                     }
                     post() {
